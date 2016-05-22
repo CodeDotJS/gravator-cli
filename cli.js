@@ -4,7 +4,7 @@
 
 const gravator = require('gravator');
 
-const colors = require('colors');
+const colors = require('colors/safe');
 
 const argv = require('yargs')
 
@@ -14,7 +14,7 @@ const argv = require('yargs')
 
     .describe('u', '❱ gravatar username')
 
-    .example(colors.cyan.bold('$0 -u rushforlinux'))
+    .example('$0 -u rushforlinux')
 
     .argv;
 
