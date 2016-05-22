@@ -18,10 +18,16 @@ $ sudo npm install --global gravator-cli
 
 ```
 $ gravator
+Usage: cli.js -u [user.name]
 
-	Usage: gravator [username]
+Options:
+  -u  ❱ gravatar username                                             [required]
 
-	Example: gravator matt
+Examples:
+  cli.js -u rushforlinux
+
+Missing required argument: u
+
 
 ```
 
