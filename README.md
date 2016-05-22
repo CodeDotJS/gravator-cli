@@ -33,9 +33,8 @@ Missing required argument: u
 
 __NOTE__
 
-Since the API returns *null* if the value ins't found for a particular section.
-So, if you see a section missing while running this tool, it means the gravatar
-user didn't provide the information for that section.
+If you see a section missing, it means the value for that section is *null* in API, which means
+user didn't provide information for that part.
 
 ## Screenshot
 
