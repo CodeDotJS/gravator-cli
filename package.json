@@ -1,7 +1,7 @@
 {
   "name": "gravator-cli",
   "version": "1.0.0",
-  "description": "A simple CLI tool to get user information of a Gravatar User",
+  "description": "A simple CLI tool to fetch user information of a Gravatar User",
   "license": "MIT",
   "repository": {
     "type": "git",
