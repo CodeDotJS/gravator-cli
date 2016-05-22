@@ -1,0 +1,55 @@
+{
+  "name": "gravator-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI tool to get user information of a Gravatar User",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedotjs/gravator-cli.git"
+  },
+  "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.com)",
+  "bin": {
+    "gravator": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "gravator",
+    "gravatar",
+    "user",
+    "information",
+    "profile",
+    "social",
+    "biography",
+    "social-links",
+    "scrape",
+    "fetch"
+  ],
+  "dependencies": {
+    "gravator": "*",
+    "yargs": "*",
+    "colors": "*"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^0.2.2",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  },
+  "bugs": {
+    "url": "https://github.com/codedotjs/gravator-cli/issues"
+  },
+  "homepage": "https://github.com/codedotjs/gravator-cli#readme",
+  "main": "cli.js"
+}
