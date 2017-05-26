@@ -14,41 +14,40 @@ __OR__
 $ sudo npm install --global gravator-cli
 ```
 
+## Preview
+
+<p align="center"><img src="https://raw.githubusercontent.com/rishigiridotcom/rishigiri.com/0da5d1269e8a93883c0a1b72b45f8a2e85ddc9fe/github/ezgif-2-98ea2ccf4f.gif"></p>
+
 ## Usage
 
 ```
-$ gravator
+ Usage: gravator <username>
+        gravator <username> [options]
 
-Usage: gravator -u [user.name]
+ Options:
+   --id
+   --hash
+   --requestHash
+   --profileUrl
+   --preferredUsername
+   --thumbnailUrl
+   --displayName
+   --aboutMe
+   --currentLocation
 
-Options:
-  -u  ❱ gravatar username                                             [required]
+ Example:
+   $ gravator matt --id
+   $ gravator matt --hash
 
-Examples:
-  gravator -u rushforlinux
-
-Missing required argument: u
-
+ Note: username is always 'foo'@example.com
 ```
-
-__NOTE__
-
-If you see a section missing, it means the value for that section is *null* in API, which means
-user didn't provide information for that part.
-
-## Screenshot
-
-[![Gravator CLI](http://rishigiri.com/github/gravator-cli.png)](https://github.com/CodeDotJS/gravator-cli)
 
 ## Related
 
-- [gravator](https://github.com/CodeDotJS/gravator) : API for this CLI Tool.
+- __[`gravator`](https://github.com/CodeDotJS/gravator)__ `: API for this CLI Tool.`
 
-- [twifo](https://github.com/CodeDotJS/twifo-cli) : Get user information of a twitter user.
+- __[`twifo`](https://github.com/CodeDotJS/twifo-cli)__ `: Get user information of a twitter user.`
 
-- [packstat](https://github.com/CodeDotJS/packstat-cli) : Easily display metrices about npm modules.
-
-- [packages-by](https://github.com/CodeDotJS/packages-by-cli) : Total packages published by a npm user.
 
 ## License
 
