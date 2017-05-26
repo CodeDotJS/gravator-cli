@@ -1,56 +1,56 @@
 {
-    "name": "gravator-cli",
-    "version": "1.0.1",
-    "description": "A simple CLI tool to fetch user information of a Gravatar User",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/codedotjs/gravator-cli.git"
-    },
-    "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.com)",
-    "bin": {
-        "gravator": "cli.js"
-    },
-    "engines": {
-        "node": ">=4"
-    },
-    "scripts": {
-        "test": "xo && ava"
-    },
-    "files": [
-        "cli.js"
-    ],
-    "keywords": [
-        "cli-app",
-        "cli",
-        "gravator",
-        "gravatar",
-        "user",
-        "information",
-        "profile",
-        "social",
-        "biography",
-        "social-links",
-        "scrape",
-        "fetch"
-    ],
-    "dependencies": {
-        "got": "^6.7.1",
-        "log-update": "1.0.2",
-        "ora": "0.4.0",
-        "update-notifier": "1.0.3"
-    },
-    "devDependencies": {
-        "ava": "*",
-        "execa": "^0.2.2",
-        "xo": "*"
-    },
-    "xo": {
-        "esnext": true
-    },
-    "bugs": {
-        "url": "https://github.com/codedotjs/gravator-cli/issues"
-    },
-    "homepage": "https://github.com/codedotjs/gravator-cli#readme",
-    "main": "cli.js"
+  "name": "gravator-cli",
+  "version": "1.0.2",
+  "description": "A simple CLI tool to fetch user information of a Gravatar User",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codedotjs/gravator-cli.git"
+  },
+  "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.com)",
+  "bin": {
+    "gravator": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "gravator",
+    "gravatar",
+    "user",
+    "information",
+    "profile",
+    "social",
+    "biography",
+    "social-links",
+    "scrape",
+    "fetch"
+  ],
+  "dependencies": {
+    "got": "^6.7.1",
+    "log-update": "1.0.2",
+    "ora": "0.4.0",
+    "update-notifier": "1.0.3"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^0.2.2",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  },
+  "bugs": {
+    "url": "https://github.com/codedotjs/gravator-cli/issues"
+  },
+  "homepage": "https://github.com/codedotjs/gravator-cli#readme",
+  "main": "cli.js"
 }
