@@ -2,58 +2,92 @@
 
 'use strict';
 
-const gravator = require('gravator');
+const dns = require('dns');
+const got = require('got');
+const logUpdate = require('log-update');
+const ora = require('ora');
+const updateNotifier = require('update-notifier');
+const pkg = require('./package.json');
 
-const colors = require('colors/safe');
+updateNotifier({
+	pkg
+}).notify();
+const spinner = ora();
+const arg = process.argv[2];
+const opts = process.argv[3];
 
-const argv = require('yargs')
+if (!arg) {
+	console.log(`
+ Usage: gravator <username>
+        gravator <username> [options]
 
-    .usage(colors.cyan.bold('\n Usage: $0 -u [user.name]'))
+ Options:
+   --id
+   --hash
+   --requestHash
+   --profileUrl
+   --preferredUsername
+   --thumbnailUrl
+   --displayName
+   --aboutMe
+   --currentLocation
 
-    .demand(['u'])
+ Example:
+   $ gravator matt --id
+   $ gravator matt --hash
 
-    .describe('u', '❱ gravatar username')
+ Note: username is always 'foo'@example.com
+				`);
+	process.exit(1);
+}
 
-    .example('$0 -u rushforlinux')
-
-    .argv;
-
-gravator(argv.u).then(user => {
-	const inf = [];
-
-	const informationRow = (prefix, key) => {
-		if (user[key]) {
-			inf.push(`${prefix}: ${user[key]}`);
-		}
-	};
-
-	console.log('\n');
-
-	informationRow(' ❱ Name        ', 'username');
-
-	informationRow(' ❱ Location    ', 'location');
-
-	informationRow(' ❱ Bio         ', 'biography');
-
-	informationRow(' ❱ Wordpress   ', 'wordpress');
-
-	informationRow(' ❱ Twitter     ', 'twitter');
-
-	informationRow(' ❱ Facebook    ', 'facebook');
-
-	informationRow(' ❱ Flickr      ', 'flickr');
-
-	informationRow(' ❱ Google+     ', 'googlePlus');
-
-	informationRow(' ❱ LinkedIn    ', 'linkedIn');
-
-	informationRow(' ❱ YouTube     ', 'youtube');
-
-	informationRow(' ❱ Blogger     ', 'blogger');
-
-	informationRow(' ❱ Tumblr      ', 'tumblr');
-
-	console.log(inf.join('\n'));
-
-	console.log('\n');
+dns.lookup('en.gravatar.com', err => {
+	if (err) {
+		logUpdate(`\n› Please check your internet connection\n`);
+		process.exit(1);
+	} else {
+		logUpdate();
+		spinner.text = `Please wait!`;
+		spinner.start();
+	}
 });
+
+if (!opts) {
+	logUpdate(`\n› option flag required\n`);
+	process.exit(1);
+}
+
+const getKeyByValue = (object, value) => {
+	return Object.keys(object).find(key => object[key] === value);
+};
+
+const prop = {
+	id: '--id',
+	hash: '--hash',
+	requestHash: '--requestHash',
+	profileUrl: '--profileUrl',
+	preferredUsername: '--preferredUsername',
+	thumbnailUrl: '--thumbnailUrl',
+	displayName: '--displayName',
+	aboutMe: '--aboutMe',
+	currentLocation: '--currentLocation'
+};
+
+const propKey = getKeyByValue(prop, opts);
+
+const url = `https://en.gravatar.com/${arg}.json`;
+
+if (arg && opts) {
+	got(url, {
+		json: true
+	}).then(res => {
+		const noop = res.body;
+		const data = noop.entry[0][propKey];
+		logUpdate(`\n› ${propKey}: ${data}\n`);
+		spinner.stop();
+	}).catch(err => {
+		if (err) {
+			process.exit(1);
+		}
+	});
+}
